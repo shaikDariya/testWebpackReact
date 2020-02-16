@@ -1,2 +1,0 @@
-# testWebpackReact
-Created with CodeSandbox
