@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
-import App from './App';
+import TodoApp from './app';
 import registerServiceWorker from './registerServiceWorker';
 
 const renderApp = () => {
   const rootElement = document.getElementById('app');
   ReactDOM.render(
     <Router>
-      <App />
+      <TodoApp />
     </Router>,
     rootElement,
   );
