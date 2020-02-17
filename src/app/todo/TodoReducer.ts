@@ -1,6 +1,6 @@
 import {UserType} from './User/UserType';
 import {todoActionType} from './TodoActions';
-import {SELECT_USER} from './TodoConstants';
+import {SELECT_USER, FETCH_USER, TODO_LOADING} from './TodoConstants';
 
 type TodoStateType = {
   loading: boolean;
@@ -9,13 +9,19 @@ type TodoStateType = {
 };
 
 export const todoState: TodoStateType = {
-  loading: false,
+  loading: true,
   usersList: [],
   selectedUser: {},
 };
 
 const TodoReducer = (state: TodoStateType, action: todoActionType): TodoStateType => {
   switch (action.type) {
+    case TODO_LOADING: {
+      return {...state, loading: action.payload};
+    }
+    case FETCH_USER: {
+      return {...state, usersList: action.payload};
+    }
     case SELECT_USER: {
       return {...state, selectedUser: action.payload};
     }

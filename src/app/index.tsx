@@ -5,7 +5,7 @@ import TodoApp from './todo';
 const App = () => (
   <Fragment>
     <Switch>
-      <Route exact path="/">
+      <Route path="/">
         {/* TodoApp Starts Here*/}
         <TodoApp />
       </Route>

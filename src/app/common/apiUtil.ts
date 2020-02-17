@@ -1,4 +1,4 @@
-const fakeApiBaseUrl: string = 'http://jsonplaceholder.typicode.com';
+const fakeApiBaseUrl: string = 'https://jsonplaceholder.typicode.com';
 const jsonWrapper = (method: string) => async (path: string, init: any = {}): Promise<any> => {
   const response = await fetch(fakeApiBaseUrl + path, {
     ...init,
