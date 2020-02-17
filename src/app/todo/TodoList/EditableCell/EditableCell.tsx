@@ -20,7 +20,7 @@ const EditableCell = ({todo, updateEdit, updateToDone, deleteTodo}: EditableCell
     SetChecked(!checked);
   };
   const [edit, setEdit] = useState(false);
-  const [checked, SetChecked] = useState(true);
+  const [checked, SetChecked] = useState(todo.completed);
   const closeEdit = () => {
     const title = input.current.value;
     updateEdit({...todo, title});
