@@ -86,7 +86,7 @@ const TodoList = () => {
         <Spinner />
       ) : (
         <Fragment>
-          <Button className="pg" size="sm" onClick={() => dispatch(dispatchSetIsNewTodo(true))}>
+          <Button className="pg float-right" size="sm" onClick={() => dispatch(dispatchSetIsNewTodo(true))}>
             Add Todo
           </Button>
           <table className="table">
