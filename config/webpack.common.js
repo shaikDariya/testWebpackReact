@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 module.exports = {
   entry: {
-    app: './src/index.tsx',
+    app: './src/index.ts',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -38,17 +38,7 @@ module.exports = {
       {
         test: /\.css$/i,
         exclude: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              },
-            },
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },

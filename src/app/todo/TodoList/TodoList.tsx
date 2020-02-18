@@ -19,6 +19,7 @@ const TodoList = () => {
   const [state, dispatch] = useReducer(TodoListReducer, todoState);
   useEffect(() => {
     async function fetchData() {
+      dispatch(dispatchSetLoading(true));
       const todoList = await fetchJson(`/todos/?userId=${userId.id}`);
       dispatch(dispatchFetchTodo(todoList));
       dispatch(dispatchSetLoading(false));
